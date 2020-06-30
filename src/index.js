@@ -1,3 +1,4 @@
+import './style.css';
 import { Dom } from './dom.js';
 import { navBar } from './nav.js';
 import { pageTitle } from './pageTitle.js';
