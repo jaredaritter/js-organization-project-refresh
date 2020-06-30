@@ -10,7 +10,6 @@ function navBar(pages) {
     element.classList.add('navLink');
     nav.appendChild(element);
   });
-  console.log(nav);
   return nav;
 }
 
