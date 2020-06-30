@@ -3,8 +3,16 @@ const Dom = (() => {
     args.forEach((arg) => {
       document.body.appendChild(arg);
     });
+
+  const renderLibrary = (library) => {
+    library.forEach((book) => {
+      console.table(book);
+    });
+  };
+
   return {
     render,
+    renderLibrary,
   };
 })();
 
