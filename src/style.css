@@ -16,3 +16,13 @@ body {
 .title {
   text-align: center;
 }
+
+.para {
+  margin-left: 5%;
+  margin-right: 5%;
+  font-size: 1.1em;
+}
+
+.table {
+  margin: auto;
+}
