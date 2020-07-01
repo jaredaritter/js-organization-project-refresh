@@ -4,6 +4,14 @@ const Dom = (() => {
       document.body.appendChild(arg);
     });
 
+  const renderHome = (content) => {
+    content.forEach((para) => {
+      const p = document.createElement('p');
+      p.textContent = para;
+      document.body.appendChild(p);
+    });
+  };
+
   const renderLibrary = (library) => {
     library.forEach((book) => {
       console.table(book);
@@ -49,6 +57,7 @@ const Dom = (() => {
 
   return {
     render,
+    renderHome,
     renderLibrary,
   };
 })();

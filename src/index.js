@@ -2,6 +2,7 @@ import './style.css';
 import { Dom } from './dom.js';
 import { navBar } from './nav.js';
 import { pageTitle } from './pageTitle.js';
+import { home } from './home.js';
 import { library } from './library.js';
 
 const pages = ['index', 'library', 'tic-tac-toe', 'restaurant'];
@@ -12,7 +13,7 @@ Dom.render(pageTitle(title.textContent));
 
 switch (title.textContent) {
   case 'Index':
-    // SOMETHING HAPPENS
+    home.render();
     break;
   case 'Library':
     library.render();
