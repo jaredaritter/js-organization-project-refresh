@@ -1,3 +1,5 @@
+import { Dom } from './dom.js';
+
 const library = (() => {
   console.log('library module working');
   let myLibrary = [];
@@ -21,10 +23,10 @@ const library = (() => {
     console.table(myLibrary);
   }
 
+  const render = () => Dom.renderLibrary(myLibrary);
+
   return {
-    myLibrary,
-    addBookToLibrary,
-    logLibrary,
+    render,
   };
 })();
 

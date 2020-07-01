@@ -15,9 +15,7 @@ switch (title.textContent) {
     // SOMETHING HAPPENS
     break;
   case 'Library':
-    Dom.renderLibrary(library.myLibrary);
-    library.addBookToLibrary('Some New Book', 'My', 234, true);
-    Dom.renderLibrary(library.myLibrary);
+    library.render();
     break;
   default:
     console.log('Something strange has happened');
