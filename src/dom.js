@@ -1,3 +1,5 @@
+import { library } from './library.js';
+
 const Dom = (() => {
   const render = (...args) =>
     args.forEach((arg) => {
@@ -13,10 +15,16 @@ const Dom = (() => {
     });
   };
 
-  const renderLibrary = (library) => {
-    library.forEach((book) => {
+  const renderLibrary = (lib) => {
+    lib.forEach((book) => {
       console.table(book);
     });
+
+    // BOOK BUTTON
+    const bookButton = document.createElement('button');
+    bookButton.textContent = 'Add New Book';
+    bookButton.addEventListener('click', library.addBookToLibrary);
+    document.body.appendChild(bookButton);
 
     // TABLE AND THEAD VARS
     const table = document.createElement('table');
@@ -44,7 +52,7 @@ const Dom = (() => {
 
     // BUILD AND ATTACH TBODY TO TABLE
     const tbody = document.createElement('tbody');
-    library.forEach((book) => {
+    lib.forEach((book) => {
       const tr = document.createElement('tr');
       for (const item in book) {
         const td = document.createElement('td');

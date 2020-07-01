@@ -4,8 +4,11 @@ const library = (() => {
   console.log('library module working');
   let myLibrary = [];
 
-  addBookToLibrary('The Hobbit', 'JRR Tolkein', 432, true);
-  addBookToLibrary('Enders Game', 'Orson Scott Card', 645, true);
+  // BOILERPLATE
+  const theHobbit = new Book('The Hobbit', 'JRR Tolkein', 432, true);
+  const endersGame = new Book('Enders Game', 'Orson Scott Card', 645, true);
+  myLibrary.push(theHobbit);
+  myLibrary.push(endersGame);
 
   function Book(title, author, pages, read) {
     this.title = title;
@@ -14,9 +17,14 @@ const library = (() => {
     this.read = read;
   }
 
-  function addBookToLibrary(title, author, pages, read) {
+  function addBookToLibrary() {
+    const title = prompt('title');
+    const author = prompt('author');
+    const pages = prompt('pages');
+    const read = prompt('read');
     const newBook = new Book(title, author, pages, read);
     myLibrary.push(newBook);
+    render();
   }
 
   function logLibrary() {
@@ -26,6 +34,7 @@ const library = (() => {
   const render = () => Dom.renderLibrary(myLibrary);
 
   return {
+    addBookToLibrary,
     render,
   };
 })();
