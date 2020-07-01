@@ -5,5 +5,7 @@
 
 ## To Do List
 
+- Clear prior table on re-render
+  - Decide whether to break library render down into more parts
 - Create container on each page for content to go in that is independent of nav and header
 - Build form for input of new books into library
