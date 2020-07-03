@@ -2,7 +2,6 @@ import { Dom } from './dom.js';
 import { contentContainer } from './pageTemplate.js';
 
 const library = (() => {
-  console.log('library module working');
   let myLibrary = [];
 
   // BOILERPLATE
@@ -11,6 +10,7 @@ const library = (() => {
   myLibrary.push(theHobbit);
   myLibrary.push(endersGame);
 
+  // BOOK CONSTRUCTOR
   function Book(title, author, pages, read) {
     this.title = title;
     this.author = author;
@@ -18,6 +18,7 @@ const library = (() => {
     this.read = read;
   }
 
+  // USED IN CLICK EVENT IN DOM.RENDERLIBRARY
   function addBookToLibrary() {
     const title = prompt('title');
     const author = prompt('author');

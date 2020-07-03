@@ -3,7 +3,6 @@ import { library } from './library.js';
 const Dom = (() => {
   const render = (parent, ...elements) =>
     elements.forEach((element) => {
-      console.log(parent);
       parent.appendChild(element);
     });
 
@@ -17,10 +16,6 @@ const Dom = (() => {
   };
 
   const renderLibrary = (parent, lib) => {
-    lib.forEach((book) => {
-      console.table(book);
-    });
-
     // BOOK BUTTON
     const bookButton = document.createElement('button');
     bookButton.textContent = 'Add New Book';
