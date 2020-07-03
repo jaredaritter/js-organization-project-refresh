@@ -8,10 +8,12 @@ const home = (() => {
     'Thanks for taking a look!',
   ];
 
-  const render = () => Dom.renderHome(content);
+  // const parent = document.querySelector('.content-container');
+
+  const renderIn = (parent) => Dom.renderHome(parent, content);
 
   return {
-    render,
+    renderIn,
   };
 })();
 

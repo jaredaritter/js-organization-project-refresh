@@ -3,19 +3,20 @@ import { library } from './library.js';
 const Dom = (() => {
   const render = (parent, ...elements) =>
     elements.forEach((element) => {
+      console.log(parent);
       parent.appendChild(element);
     });
 
-  const renderHome = (content) => {
+  const renderHome = (parent, content) => {
     content.forEach((para) => {
       const p = document.createElement('p');
       p.textContent = para;
       p.classList.add('para');
-      document.body.appendChild(p);
+      parent.appendChild(p);
     });
   };
 
-  const renderLibrary = (lib) => {
+  const renderLibrary = (parent, lib) => {
     lib.forEach((book) => {
       console.table(book);
     });
@@ -24,7 +25,7 @@ const Dom = (() => {
     const bookButton = document.createElement('button');
     bookButton.textContent = 'Add New Book';
     bookButton.addEventListener('click', library.addBookToLibrary);
-    document.body.appendChild(bookButton);
+    parent.appendChild(bookButton);
 
     // TABLE AND THEAD VARS
     const table = document.createElement('table');
@@ -63,8 +64,8 @@ const Dom = (() => {
     });
     table.appendChild(tbody);
 
-    // ATTACH TABLE TO BODY
-    document.body.appendChild(table);
+    // ATTACH TABLE TO CONTENTCONTAINER (PARENT)
+    parent.appendChild(table);
   };
 
   return {

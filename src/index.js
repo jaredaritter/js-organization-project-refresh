@@ -16,10 +16,10 @@ Dom.render(
 
 switch (title.textContent) {
   case 'Index':
-    home.render();
+    home.renderIn(contentContainer);
     break;
   case 'Library':
-    library.render();
+    library.renderIn(contentContainer);
     break;
   default:
     console.log('Something strange has happened');

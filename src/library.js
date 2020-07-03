@@ -1,4 +1,5 @@
 import { Dom } from './dom.js';
+import { contentContainer } from './pageTemplate.js';
 
 const library = (() => {
   console.log('library module working');
@@ -24,18 +25,18 @@ const library = (() => {
     const read = prompt('read');
     const newBook = new Book(title, author, pages, read);
     myLibrary.push(newBook);
-    render();
+    renderIn(contentContainer);
   }
 
   function logLibrary() {
     console.table(myLibrary);
   }
 
-  const render = () => Dom.renderLibrary(myLibrary);
+  const renderIn = (parent) => Dom.renderLibrary(parent, myLibrary);
 
   return {
     addBookToLibrary,
-    render,
+    renderIn,
   };
 })();
 
