@@ -1,9 +1,9 @@
 import { library } from './library.js';
 
 const Dom = (() => {
-  const render = (...args) =>
-    args.forEach((arg) => {
-      document.body.appendChild(arg);
+  const render = (parent, ...elements) =>
+    elements.forEach((element) => {
+      parent.appendChild(element);
     });
 
   const renderHome = (content) => {
