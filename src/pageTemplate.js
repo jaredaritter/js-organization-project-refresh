@@ -13,4 +13,14 @@ function navBar(pages) {
   return nav;
 }
 
-export { navBar };
+function pageTitle(title) {
+  const element = document.createElement('h1');
+  element.classList.add('title');
+  element.textContent = title;
+  return element;
+}
+
+const contentContainer = document.createElement('div');
+contentContainer.classList.add('content-container');
+
+export { pageTitle, navBar, contentContainer };
